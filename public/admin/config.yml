@@ -1,16 +1,15 @@
 # ---------------------------------------------------------------------------
 # Sveltia CMS configuration — powers /admin
 #
-# 1. Change `repo` below to your GitHub repository: "username/repository".
-# 2. Commit + push this repo to GitHub.
-# 3. Open /admin, click "Sign in with Token" and paste a GitHub token that has
-#    read & write access to this repository's contents.
+# The repository is already set to 22shaban/my-portfolio.
+# Open /admin, click "Sign In Using Access Token" and paste a GitHub token
+# with read & write access to this repository's contents.
 # Full walkthrough: README.md → "Editing content (admin panel)".
 # ---------------------------------------------------------------------------
 
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/your-portfolio
+  repo: 22shaban/my-portfolio
   branch: main
   # Optional: uncomment and point at a Sveltia CMS Authenticator deployment to
   # replace the token login with a "Sign in with GitHub" button.
