@@ -1,0 +1,42 @@
+{
+  "name": "Your Name",
+  "headline": ["Creative", "Web Developer"],
+  "studio": "North Studio",
+  "email": "hello@yourname.dev",
+  "location": "Lisbon, Portugal",
+  "timeZone": "Europe/Lisbon",
+  "timeLabel": "WET",
+  "availability": "Available for new work",
+  "since": "./SINCE 2019",
+  "statement": "Interactive design, WebGL and fluid motion — built to be remembered.",
+  "intro": "I'm a creative developer passionate about crafting smooth, interactive and memorable web experiences.",
+  "introSecondary": "I bring ideas to life with clean code, fluid animation and playful interaction.",
+  "interlude": [
+    "Over the years, I've collaborated with studios and brands to create digital projects that blend creativity and technical precision.",
+    "From minimal showcases to immersive experiences,",
+    "my goal is always to turn concepts into living, interactive websites.",
+    "Pixel by pixel, line by line."
+  ],
+  "studioCopy": "I'm also part of North Studio, a small digital practice run with a long-time collaborator. Together we design & develop custom websites that go from idea to reality.",
+  "ticker": [
+    "In my ears — Glasshouse / Monoform",
+    "Available for Q1 2027",
+    "Based in Lisbon, Portugal",
+    "Scroll to explore"
+  ],
+  "socials": [
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/" },
+    { "label": "GitHub", "href": "https://github.com/" },
+    { "label": "X", "href": "https://x.com/" }
+  ],
+  "nav": [
+    { "label": "Work", "href": "#work" },
+    { "label": "About", "href": "#about" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "confidential": [
+    { "top": "Confidential / 2026", "bottom": "Do_not_open" },
+    { "top": "Didn't you read the label?", "bottom": "One time, I'll let it slide." },
+    { "top": "Ok, you asked.", "bottom": "Secret: I still use console.log()" }
+  ]
+}

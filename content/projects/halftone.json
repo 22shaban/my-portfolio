@@ -1,0 +1,10 @@
+{
+  "slug": "halftone",
+  "title": "Halftone",
+  "year": "2025",
+  "order": 2,
+  "tags": ["Three.js", "GLSL", "Motion"],
+  "awards": ["Developer Award", "", "Honorable Mention"],
+  "hue": 210,
+  "blurb": "A print-inspired gallery where every image is rebuilt from dots in a custom shader, reacting to the cursor like ink on paper."
+}

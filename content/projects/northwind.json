@@ -1,0 +1,10 @@
+{
+  "slug": "northwind",
+  "title": "Northwind",
+  "year": "2026",
+  "order": 1,
+  "tags": ["Next.js", "WebGL", "GSAP"],
+  "awards": ["Site of the Day", "Developer Award", ""],
+  "hue": 28,
+  "blurb": "A wind-swept brand site with a real-time particle field, scroll-linked camera moves and a type system that stretches with the weather."
+}

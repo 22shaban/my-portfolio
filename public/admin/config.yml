@@ -1,0 +1,204 @@
+# ---------------------------------------------------------------------------
+# Sveltia CMS configuration — powers /admin
+#
+# 1. Change `repo` below to your GitHub repository: "username/repository".
+# 2. Commit + push this repo to GitHub.
+# 3. Open /admin, click "Sign in with Token" and paste a GitHub token that has
+#    read & write access to this repository's contents.
+# Full walkthrough: README.md → "Editing content (admin panel)".
+# ---------------------------------------------------------------------------
+
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/your-portfolio
+  branch: main
+  # Optional: uncomment and point at a Sveltia CMS Authenticator deployment to
+  # replace the token login with a "Sign in with GitHub" button.
+  # base_url: https://your-oauth-worker.workers.dev
+
+publish_mode: simple
+locale: en
+logo_url: /icon.svg
+
+# Uploaded images (not used by the procedural plates yet, but ready for when
+# you add real project artwork).
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  # -------------------------------------------------------------------------
+  # One file: content/site.json
+  # -------------------------------------------------------------------------
+  - name: site
+    label: Site
+    description: Name, hero headline, about copy, contact details and socials.
+    editor:
+      preview: false
+    files:
+      - name: settings
+        label: Site settings
+        file: content/site.json
+        fields:
+          - name: name
+            label: Name
+            widget: string
+            hint: Appears in the hero, the meta strip and the footer.
+
+          - name: headline
+            label: Hero headline
+            widget: list
+            label_singular: Line
+            hint: One line per row. The first letter of the last line becomes the accent glyph.
+
+          - name: statement
+            label: Statement
+            widget: text
+
+          - name: intro
+            label: About — first paragraph
+            widget: text
+
+          - name: introSecondary
+            label: About — second paragraph
+            widget: text
+
+          - name: interlude
+            label: Interlude lines
+            widget: list
+            label_singular: Line
+
+          - name: studio
+            label: Studio name
+            widget: string
+
+          - name: studioCopy
+            label: Studio paragraph
+            widget: text
+
+          - name: since
+            label: "Since label"
+            widget: string
+            hint: 'Small mono label, e.g. "./SINCE 2019".'
+
+          - name: availability
+            label: Availability
+            widget: string
+            hint: Shown in the hero meta strip.
+
+          - name: email
+            label: Email
+            widget: string
+
+          - name: location
+            label: Location
+            widget: string
+
+          - name: timeZone
+            label: Time zone
+            widget: string
+            hint: IANA name, e.g. Europe/Lisbon.
+
+          - name: timeLabel
+            label: Time zone label
+            widget: string
+            hint: Short label next to the clock, e.g. WET.
+
+          - name: ticker
+            label: Status ticker
+            widget: list
+            label_singular: Item
+
+          - name: socials
+            label: Social links
+            widget: list
+            label_singular: Link
+            summary: "{{fields.label}} — {{fields.href}}"
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: href, label: URL, widget: string }
+
+          - name: nav
+            label: Navigation
+            widget: list
+            label_singular: Link
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: href, label: Anchor or URL, widget: string }
+
+          - name: confidential
+            label: Confidential card states
+            widget: list
+            label_singular: State
+            summary: "{{fields.top}}"
+            hint: Clicking the folder card cycles through these.
+            fields:
+              - { name: top, label: Title, widget: string }
+              - { name: bottom, label: Subtitle, widget: string }
+
+  # -------------------------------------------------------------------------
+  # One JSON file per project: content/projects/*.json
+  # -------------------------------------------------------------------------
+  - name: projects
+    label: Work
+    label_singular: Project
+    description: Projects in the work index. Order controls their position.
+    folder: content/projects
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: slug
+    summary: "{{title}} — {{year}}"
+    sortable_fields: [order, year, title]
+    slug:
+      template: "{{fields.slug}}"
+      hint: Filename and id, lowercase with hyphens (e.g. north-wind).
+      pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Lowercase letters, numbers and hyphens only"]
+    fields:
+      - name: title
+        label: Title
+        widget: string
+
+      - name: slug
+        label: Slug
+        widget: string
+        hint: Lowercase with hyphens. Keep it stable once published.
+        pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Lowercase letters, numbers and hyphens only"]
+
+      - name: order
+        label: Order
+        widget: number
+        value_type: int
+        min: 1
+        default: 10
+        hint: Lower numbers appear first in the work index.
+
+      - name: year
+        label: Year
+        widget: string
+
+      - name: tags
+        label: Tags
+        widget: list
+        label_singular: Tag
+        hint: First tag is shown in the list row.
+
+      - name: awards
+        label: Recognition
+        widget: list
+        label_singular: Award
+        hint: The first two non-empty entries appear in the work index.
+
+      - name: hue
+        label: Plate hue
+        widget: number
+        value_type: int
+        min: 0
+        max: 360
+        default: 210
+        hint: 0–360. Colours the generated project plate.
+
+      - name: blurb
+        label: Blurb
+        widget: text

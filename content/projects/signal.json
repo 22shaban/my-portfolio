@@ -1,0 +1,10 @@
+{
+  "slug": "signal",
+  "title": "Signal",
+  "year": "2024",
+  "order": 4,
+  "tags": ["Canvas", "Shaders", "Audio"],
+  "awards": ["Site of the Day", "Developer Award", ""],
+  "hue": 340,
+  "blurb": "A generative audiovisual toy. Every click seeds a new composition of waveforms, grain and chromatic drift."
+}

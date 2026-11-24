@@ -1,0 +1,10 @@
+{
+  "slug": "atlas",
+  "title": "Atlas",
+  "year": "2025",
+  "order": 3,
+  "tags": ["Nuxt", "Lenis", "CMS"],
+  "awards": ["Site of the Day", "", ""],
+  "hue": 96,
+  "blurb": "An editorial atlas for a travel archive: 40 destinations, one continuous scroll and a map that redraws itself as you read."
+}
