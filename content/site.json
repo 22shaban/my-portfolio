@@ -6,7 +6,7 @@
   ],
   "statement": "Cloud infrastructure, automation and systems built to stay online.",
   "intro": "I'm a cloud and infrastructure engineer focused on building reliable, automated and observable platforms.",
-  "introSecondary": "From pipelines to production clean systems, fast feedback and boring reliability.",
+  "introSecondary": "From pipelines to production — clean systems, fast feedback and boring reliability.",
   "interlude": [
     "Over the years I've worked across cloud platforms, automation and infrastructure, turning manual processes into repeatable systems.",
     "From single deployments to multi-region platforms,",
@@ -14,15 +14,15 @@
     "Uptime by design."
   ],
   "studio": "HyperTech Studio",
-  "studioCopy": "I work independently with teams that need their cloud foundations rebuilt  from CI/CD and infrastructure as code to monitoring, cost control and on-call.",
+  "studioCopy": "I work independently with teams that need their cloud foundations rebuilt — from CI/CD and infrastructure as code to monitoring, cost control and on-call.",
   "since": "./SINCE 2021",
   "availability": "Open to new projects",
   "email": "shabanshaikhit@gmail.com",
   "location": "Mumbai, India",
-  "timeZone": "Asia/Mumbai",
+  "timeZone": "Asia/Kolkata",
   "timeLabel": "IST",
   "ticker": [
-    "Currently Terraform / Kubernetes",
+    "Currently — Terraform / Kubernetes",
     "Open to new opportunities",
     "Based in Mumbai, India",
     "Scroll to explore"
@@ -30,7 +30,7 @@
   "socials": [
     {
       "label": "LinkedIn",
-      "href": "https://www.linkedin.com/isthatshaban"
+      "href": "https://www.linkedin.com/in/isthatshaban"
     },
     {
       "label": "GitHub",

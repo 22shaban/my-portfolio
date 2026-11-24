@@ -11,12 +11,20 @@ export const clamp = (v: number, min: number, max: number) =>
 export const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
 export function formatTime(date: Date, timeZone: string) {
-  return new Intl.DateTimeFormat("en-GB", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-    timeZone,
-  }).format(date);
+  const format = (tz?: string) =>
+    new Intl.DateTimeFormat("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+      ...(tz ? { timeZone: tz } : {}),
+    }).format(date);
+
+  try {
+    return format(timeZone);
+  } catch {
+    // an invalid IANA name was typed in the CMS — fall back to local time
+    return format();
+  }
 }
 
 /** deterministic pseudo-random, so SSR and client agree */
