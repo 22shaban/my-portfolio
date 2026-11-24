@@ -1,42 +1,68 @@
 {
-  "name": "Your Name",
-  "headline": ["Creative", "Web Developer"],
-  "studio": "North Studio",
-  "email": "hello@yourname.dev",
-  "location": "Lisbon, Portugal",
-  "timeZone": "Europe/Lisbon",
-  "timeLabel": "WET",
-  "availability": "Available for new work",
-  "since": "./SINCE 2019",
-  "statement": "Interactive design, WebGL and fluid motion — built to be remembered.",
-  "intro": "I'm a creative developer passionate about crafting smooth, interactive and memorable web experiences.",
-  "introSecondary": "I bring ideas to life with clean code, fluid animation and playful interaction.",
-  "interlude": [
-    "Over the years, I've collaborated with studios and brands to create digital projects that blend creativity and technical precision.",
-    "From minimal showcases to immersive experiences,",
-    "my goal is always to turn concepts into living, interactive websites.",
-    "Pixel by pixel, line by line."
+  "name": "Shaban Shaikh",
+  "headline": [
+    "Cloud",
+    "Infrastructure Engineer"
   ],
-  "studioCopy": "I'm also part of North Studio, a small digital practice run with a long-time collaborator. Together we design & develop custom websites that go from idea to reality.",
+  "statement": "Cloud infrastructure, automation and systems built to stay online.",
+  "intro": "I'm a cloud and infrastructure engineer focused on building reliable, automated and observable platforms.",
+  "introSecondary": "From pipelines to production clean systems, fast feedback and boring reliability.",
+  "interlude": [
+    "Over the years I've worked across cloud platforms, automation and infrastructure, turning manual processes into repeatable systems.",
+    "From single deployments to multi-region platforms,",
+    "I focus on making infrastructure predictable, observable and easy to hand over.",
+    "Uptime by design."
+  ],
+  "studio": "HyperTech Studio",
+  "studioCopy": "I work independently with teams that need their cloud foundations rebuilt  from CI/CD and infrastructure as code to monitoring, cost control and on-call.",
+  "since": "./SINCE 2021",
+  "availability": "Open to new projects",
+  "email": "shabanshaikhit@gmail.com",
+  "location": "Mumbai, India",
+  "timeZone": "Asia/Mumbai",
+  "timeLabel": "IST",
   "ticker": [
-    "In my ears — Glasshouse / Monoform",
-    "Available for Q1 2027",
-    "Based in Lisbon, Portugal",
+    "Currently Terraform / Kubernetes",
+    "Open to new opportunities",
+    "Based in Mumbai, India",
     "Scroll to explore"
   ],
   "socials": [
-    { "label": "LinkedIn", "href": "https://www.linkedin.com/" },
-    { "label": "GitHub", "href": "https://github.com/" },
-    { "label": "X", "href": "https://x.com/" }
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/isthatshaban"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/22shaban"
+    }
   ],
   "nav": [
-    { "label": "Work", "href": "#work" },
-    { "label": "About", "href": "#about" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "Work",
+      "href": "#work"
+    },
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
   ],
   "confidential": [
-    { "top": "Confidential / 2026", "bottom": "Do_not_open" },
-    { "top": "Didn't you read the label?", "bottom": "One time, I'll let it slide." },
-    { "top": "Ok, you asked.", "bottom": "Secret: I still use console.log()" }
+    {
+      "top": "Confidential / 2026",
+      "bottom": "Do_not_open"
+    },
+    {
+      "top": "Didn't you read the label?",
+      "bottom": "One time, I'll let it slide."
+    },
+    {
+      "top": "Ok, you asked.",
+      "bottom": "Secret: I still use console.log()"
+    }
   ]
 }
