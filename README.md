@@ -1,12 +1,15 @@
-# Editorial Developer — Portfolio Template
+# Shaban Shaikh — Portfolio
 
-An original portfolio template inspired by the *feel* of editorial creative-developer
-sites: oversized serif type, a fog/ink theme pair, a binary preloader, a fluid WebGL
-backdrop and a work index with shader-driven hover reveals.
+Personal portfolio for a cloud & infrastructure engineer, built on the editorial
+template: oversized serif type, a fog/ink theme pair, a binary preloader, a fluid
+WebGL backdrop and a work index with shader-driven hover reveals.
 
-**Everything in this repo is placeholder content.** Names, projects, awards and copy
-are fictional. No proprietary fonts, images, videos or personal text from any
-reference site are included.
+Content is editable from a browser at `/admin` (Sveltia CMS). The work entries
+currently in `content/projects/` are placeholder projects.
+
+**Placeholder assets.** Fonts are OFL stand-ins; project plates are drawn
+procedurally in `lib/workTextures.ts`. No proprietary fonts, images, videos or
+personal text from any reference site are included.
 
 ---
 
@@ -213,6 +216,26 @@ config. Not required for a portfolio.
 
 Either host rebuilds on every commit the CMS makes, so the `/admin` workflow is
 identical on both.
+
+### Metadata, canonical URL and social previews
+
+Titles, description, keywords, `Person` JSON-LD (`app/layout.tsx`), `sitemap.xml`
+(`app/sitemap.ts`) and `robots.txt` (`app/robots.ts`) all read from
+`lib/site-meta.ts`.
+
+The canonical URL lives there too. It falls back to the deployment URL; once the
+custom domain is connected, add an environment variable on the host:
+
+```
+NEXT_PUBLIC_SITE_URL = https://your-domain.com
+```
+
+and redeploy. `robots.txt` keeps `/admin` out of search results, and the admin
+route also sends `X-Robots-Tag: noindex, nofollow` (`next.config.ts`).
+
+Social preview image: `public/og.png` (1200×630). Regenerate it by editing
+`ref/og.html` and running `node ref/og-shot.mjs` — those two files are local
+research artifacts and are not committed.
 
 ---
 
