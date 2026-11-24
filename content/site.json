@@ -6,8 +6,8 @@
   ],
   "statement": "Cloud infrastructure, automation and systems built to stay online.",
   "intro": "I'm {smiley} a cloud and infrastructure engineer focused on building reliable, automated and observable platforms.",
-  "introSecondary": "From pipelines to production — {plane} clean systems, fast feedback and boring reliability.",
-  "introNote": "— that make each project stand out.",
+  "introSecondary": "From pipelines to production {plane} clean systems, fast feedback and boring reliability.",
+  "introNote": "that make each project stand out.",
   "interlude": [
     "Over the years I've worked across cloud platforms, automation and infrastructure, turning manual processes into repeatable systems.",
     "From single deployments to multi-region platforms,",
