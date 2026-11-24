@@ -1,6 +1,20 @@
+import { Fragment } from "react";
 import { site } from "@/lib/content";
 import { Plane, Smiley } from "@/components/ui/icons";
 import Reveal from "@/components/ui/Reveal";
+
+/** `{smiley}` and `{plane}` in the copy become the little inline drawings. */
+function Inline({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(/(\{smiley\}|\{plane\})/g).map((part, i) => {
+        if (part === "{smiley}") return <Smiley key={i} />;
+        if (part === "{plane}") return <Plane key={i} />;
+        return <Fragment key={i}>{part}</Fragment>;
+      })}
+    </>
+  );
+}
 
 export default function About() {
   return (
@@ -12,19 +26,17 @@ export default function About() {
 
       <Reveal className="relative w-full tab:w-9/12 desktop:w-8/12" y={56}>
         <p className="display text-l text-center leading-[1.16] text-balance">
-          I&apos;m <Smiley /> a creative developer passionate about crafting
-          smooth, interactive &amp; memorable web experiences.
+          <Inline text={site.intro} />
         </p>
         <p className="display text-l mt-[1.1em] text-center leading-[1.16] text-balance">
-          I love bringing ideas <Plane /> to life with clean code, fluid
-          animation and playful interaction.
+          <Inline text={site.introSecondary} />
         </p>
 
         <span className="absolute -top-[2.4em] right-0 text-xxs text-muted tab:-right-[7%]">
           {site.since}
         </span>
         <span className="mt-[2.4em] block max-w-[24ch] text-left text-xxs leading-[1.4] text-muted tab:absolute tab:-bottom-[3.5em] tab:-left-[5%] tab:mt-0 tab:max-w-[16ch]">
-          — that make each project stand out.
+          {site.introNote}
         </span>
       </Reveal>
     </section>

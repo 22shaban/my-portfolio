@@ -56,10 +56,17 @@ collections:
           - name: intro
             label: About — first paragraph
             widget: text
+            hint: "Write {smiley} where the smiley drawing should sit."
 
           - name: introSecondary
             label: About — second paragraph
             widget: text
+            hint: "Write {plane} where the paper-plane drawing should sit."
+
+          - name: introNote
+            label: About — side note
+            widget: string
+            hint: Small caption next to the about text.
 
           - name: interlude
             label: Interlude lines
@@ -73,6 +80,7 @@ collections:
           - name: studioCopy
             label: Studio paragraph
             widget: text
+            hint: Mention the studio name to have it drawn in the accent type.
 
           - name: since
             label: "Since label"

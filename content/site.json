@@ -5,8 +5,9 @@
     "Infrastructure Engineer"
   ],
   "statement": "Cloud infrastructure, automation and systems built to stay online.",
-  "intro": "I'm a cloud and infrastructure engineer focused on building reliable, automated and observable platforms.",
-  "introSecondary": "From pipelines to production — clean systems, fast feedback and boring reliability.",
+  "intro": "I'm {smiley} a cloud and infrastructure engineer focused on building reliable, automated and observable platforms.",
+  "introSecondary": "From pipelines to production — {plane} clean systems, fast feedback and boring reliability.",
+  "introNote": "— that make each project stand out.",
   "interlude": [
     "Over the years I've worked across cloud platforms, automation and infrastructure, turning manual processes into repeatable systems.",
     "From single deployments to multi-region platforms,",
@@ -14,7 +15,7 @@
     "Uptime by design."
   ],
   "studio": "HyperTech Studio",
-  "studioCopy": "I work independently with teams that need their cloud foundations rebuilt — from CI/CD and infrastructure as code to monitoring, cost control and on-call.",
+  "studioCopy": "HyperTech Studio is my practice — I work with teams that need their cloud foundations rebuilt, from CI/CD and infrastructure as code to monitoring, cost control and on-call.",
   "since": "./SINCE 2021",
   "availability": "Open to new projects",
   "email": "shabanshaikhit@gmail.com",

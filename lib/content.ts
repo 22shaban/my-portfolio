@@ -26,6 +26,7 @@ export type Site = {
   statement: string;
   intro: string;
   introSecondary: string;
+  introNote: string;
   interlude: string[];
   studioCopy: string;
   ticker: string[];
