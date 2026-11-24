@@ -34,3 +34,6 @@ Thumbs.db
 # local research / QA captures (not part of the template)
 ref/
 qa/
+
+# build/start logs
+*.log
