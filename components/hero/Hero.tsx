@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { Fragment, useLayoutEffect, useRef } from "react";
 import { gsap, mainTextIn } from "@/lib/gsap";
 import { site } from "@/lib/content";
 import StatusTicker from "./StatusTicker";
@@ -11,6 +11,33 @@ export default function Hero() {
   const rootRef = useRef<HTMLElement>(null);
   // first line is always the name; the rest comes from content/site.json
   const heroLines = [`${site.name},`, ...site.headline];
+
+  // Keep the headline inside the grid on narrow screens. Every line is broken
+  // into words, and if the longest word is wider than the column the whole
+  // headline is scaled down uniformly — no overflow, and the accent glyph can
+  // never be orphaned on its own line.
+  useLayoutEffect(() => {
+    const root = rootRef.current;
+    const h1 = root?.querySelector("h1");
+    if (!root || !h1) return;
+
+    const fit = () => {
+      h1.style.fontSize = "";
+      const available = h1.clientWidth;
+      let widest = 0;
+      root.querySelectorAll<HTMLElement>(".hero-word").forEach((word) => {
+        widest = Math.max(widest, word.getBoundingClientRect().width);
+      });
+      if (!available || !widest || widest <= available) return;
+      const base = parseFloat(getComputedStyle(h1).fontSize);
+      h1.style.fontSize = `${(base * available) / widest}px`;
+    };
+
+    fit();
+    document.fonts?.ready.then(fit).catch(() => {});
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, []);
 
   useLayoutEffect(() => {
     const root = rootRef.current;
@@ -90,24 +117,36 @@ export default function Hero() {
     >
       <div className="relative flex flex-1 flex-col items-center justify-center">
         <h1
-          className="display text-hero text-center"
+          className="display text-hero w-full text-center"
           aria-label={`${site.name}, ${site.headline.join(" ")}`}
         >
           <span className="sr-only">{`${site.name}, ${site.headline.join(" ")}`}</span>
-          {heroLines.map((line, li) => (
-            <span className="hero-line" aria-hidden="true" key={line}>
-              <span className="hero-line-inner">
-                {li === heroLines.length - 1 ? (
-                  <>
-                    <span className="accent-glyph">{line.slice(0, 1)}</span>
-                    {line.slice(1)}
-                  </>
-                ) : (
-                  line
-                )}
+          {heroLines.map((line, li) => {
+            const words = line.split(/\s+/).filter(Boolean);
+            const isLast = li === heroLines.length - 1;
+
+            return (
+              <span className="hero-line" aria-hidden="true" key={`${line}-${li}`}>
+                <span className="hero-line-inner">
+                  {words.map((word, wi) => (
+                    <Fragment key={`${word}-${wi}`}>
+                      {wi > 0 && " "}
+                      <span className="hero-word">
+                        {isLast && wi === 0 ? (
+                          <>
+                            <span className="accent-glyph">{word.slice(0, 1)}</span>
+                            {word.slice(1)}
+                          </>
+                        ) : (
+                          word
+                        )}
+                      </span>
+                    </Fragment>
+                  ))}
+                </span>
               </span>
-            </span>
-          ))}
+            );
+          })}
         </h1>
 
         <div className="mt-[1.71em] flex w-full flex-wrap items-center justify-center gap-x-[2.4em] gap-y-[0.9em] text-xxs tab:mt-[1.42em]">

@@ -298,6 +298,10 @@ its build output.
 - Instrument Serif — SIL Open Font License.
 - Lobster — SIL Open Font License.
 - Sometype Mono — SIL Open Font License.
+- Dirtyline by Dirtyline Studio — free for personal use; the studio's free download
+  is licensed for desktop use, and web embedding needs their commercial licence.
+  It is used here only for the studio name (`public/fonts/Dirtyline.woff2`). If
+  you deploy this commercially, buy the web licence or swap the font.
 - GSAP — standard GSAP licence (free for most uses; SplitText is free as of 3.13).
 - Three.js — MIT.
 - Lenis — MIT.

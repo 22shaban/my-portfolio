@@ -15,7 +15,7 @@ function StudioCopy() {
   return (
     <>
       {head}
-      <em className="accent-glyph not-italic">{studio}</em>
+      <em className="studio-mark not-italic">{studio}</em>
       {tail.join(studio)}
     </>
   );

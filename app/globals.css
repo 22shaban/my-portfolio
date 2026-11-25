@@ -42,6 +42,13 @@
    and put their URLs first in each src list above. The type then matches
    the reference exactly. */
 @font-face {
+  font-family: "Dirtyline";
+  src: url("/fonts/Dirtyline.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "Sometype Mono";
   src: url("/fonts/SometypeMono.woff2") format("woff2");
   font-weight: 400 700;
@@ -261,6 +268,16 @@ html.lenis body {
     }
   }
 
+  /* Dirtyline — reserved for the studio name only */
+  .studio-mark {
+    font-family: "Dirtyline", var(--font-ter), cursive;
+    font-style: normal;
+    font-size: 1.1em;
+    line-height: 0.9;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
   .label {
     font-family: var(--font-mono);
     text-transform: uppercase;
@@ -299,6 +316,10 @@ html.lenis body {
   }
   .hero-line-inner {
     display: block;
+  }
+  /* a word never breaks internally, so the accent glyph stays attached */
+  .hero-word {
+    white-space: nowrap;
   }
 
   /* work list */
