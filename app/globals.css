@@ -261,10 +261,17 @@ html.lenis body {
     vertical-align: baseline;
   }
   @media (max-aspect-ratio: 3/5), (max-width: 767px) {
+    /* Keep the accent glyph inside the line box: its old margins used to add
+       extra leading above the line that follows, which pushed "Infrastructure"
+       away from "Cloud". */
     .accent-glyph {
-      line-height: 0.3;
-      margin-top: 0.45em;
-      margin-bottom: 0.1em;
+      font-size: 1.05em;
+      line-height: 0.85;
+      margin: 0;
+    }
+    /* That breathing room belongs after the name instead. */
+    .hero-line--name {
+      margin-bottom: 0.16em;
     }
   }
 

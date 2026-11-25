@@ -126,7 +126,11 @@ export default function Hero() {
             const isLast = li === heroLines.length - 1;
 
             return (
-              <span className="hero-line" aria-hidden="true" key={`${line}-${li}`}>
+              <span
+                className={`hero-line${li === 0 ? " hero-line--name" : ""}`}
+                aria-hidden="true"
+                key={`${line}-${li}`}
+              >
                 <span className="hero-line-inner">
                   {words.map((word, wi) => (
                     <Fragment key={`${word}-${wi}`}>
