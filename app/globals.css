@@ -260,18 +260,23 @@ html.lenis body {
     display: inline-block;
     vertical-align: baseline;
   }
-  @media (max-aspect-ratio: 3/5), (max-width: 767px) {
-    /* Keep the accent glyph inside the line box: its old margins used to add
-       extra leading above the line that follows, which pushed "Infrastructure"
-       away from "Cloud". */
-    .accent-glyph {
-      font-size: 1.05em;
-      line-height: 0.85;
-      margin: 0;
-    }
-    /* That breathing room belongs after the name instead. */
+  /* The accent glyph must not inflate the line box: its old margins added
+     leading above the following line, pushing "Infrastructure" away from
+     "Cloud". The breathing room belongs after the name instead. */
+  .hero-line .accent-glyph {
+    font-size: 1.05em;
+    /* line-height 0 keeps the glyph's tall ink from growing the line box,
+       so the leading above the line stays identical on every viewport. */
+    line-height: 0;
+    margin: 0;
+  }
+  .hero-line--name {
+    margin-bottom: 0.16em;
+  }
+  @media (min-width: 768px) {
+    /* same optical gap as mobile, scaled to the larger desktop type */
     .hero-line--name {
-      margin-bottom: 0.16em;
+      margin-bottom: 0.3em;
     }
   }
 
