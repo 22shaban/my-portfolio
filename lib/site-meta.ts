@@ -1,13 +1,12 @@
 /**
  * Canonical address of the deployed site.
  *
- * Set NEXT_PUBLIC_SITE_URL in Vercel once the custom domain is connected
- * (Project → Settings → Environment Variables), e.g. https://shabanshaikh.me.
- * Until then this falls back to the current deployment URL so that canonical
- * links and Open Graph images still resolve.
+ * `NEXT_PUBLIC_SITE_URL` overrides this at build time; otherwise the custom
+ * domain is used so canonical links, Open Graph images and the sitemap all
+ * point at the public address.
  */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://my-portfolio-22shaban.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://shabanshaikh.me";
 
 export const SITE_NAME = "Shaban Shaikh";
 

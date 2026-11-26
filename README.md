@@ -223,15 +223,15 @@ Titles, description, keywords, `Person` JSON-LD (`app/layout.tsx`), `sitemap.xml
 (`app/sitemap.ts`) and `robots.txt` (`app/robots.ts`) all read from
 `lib/site-meta.ts`.
 
-The canonical URL lives there too. It falls back to the deployment URL; once the
-custom domain is connected, add an environment variable on the host:
+The canonical URL lives there too. It defaults to `https://shabanshaikh.me`, and
+`NEXT_PUBLIC_SITE_URL` overrides it at build time if the domain ever changes:
 
 ```
-NEXT_PUBLIC_SITE_URL = https://your-domain.com
+NEXT_PUBLIC_SITE_URL = https://shabanshaikh.me
 ```
 
-and redeploy. `robots.txt` keeps `/admin` out of search results, and the admin
-route also sends `X-Robots-Tag: noindex, nofollow` (`next.config.ts`).
+`robots.txt` keeps `/admin` out of search results, and the admin route also sends
+`X-Robots-Tag: noindex, nofollow` (`next.config.ts`).
 
 Social preview image: `public/og.png` (1200×630). Regenerate it by editing
 `ref/og.html` and running `node ref/og-shot.mjs` — those two files are local
