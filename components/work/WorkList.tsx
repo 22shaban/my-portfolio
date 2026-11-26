@@ -10,6 +10,7 @@ import WorkDialog from "./WorkDialog";
 function SplitTitle({ title }: { title: string }) {
   return (
     <span className="work-title">
+      <span className="sr-only">{title}</span>
       <span className="work-title-row" aria-hidden="true">
         {title.split("").map((ch, i) => (
           <span

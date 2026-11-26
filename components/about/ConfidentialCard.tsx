@@ -22,9 +22,15 @@ export default function ConfidentialCard({ className }: { className?: string }) 
       className={`confidential group w-full max-w-full tab:w-auto ${className ?? ""}`}
       data-state={state}
       data-cursor="OPEN"
-      aria-label="Confidential file — open it"
+      aria-describedby="confidential-hint"
     >
       <FolderIcon className="h-[2.4em] w-[2.4em] shrink-0" />
+      <span
+        id="confidential-hint"
+        className="sr-only"
+      >
+        Press to cycle through the messages.
+      </span>
       <span className="min-w-0 text-left text-xxs leading-[1.35]" aria-live="polite">
         <span className="block">{current.top}</span>
         <span className="block text-muted">{current.bottom}</span>

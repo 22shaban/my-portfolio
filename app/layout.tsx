@@ -114,6 +114,13 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="fog" suppressHydrationWarning>
       <head>
+        <link
+          rel="preload"
+          href="/fonts/InstrumentSerif-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"

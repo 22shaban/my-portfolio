@@ -269,6 +269,8 @@ html.lenis body {
        so the leading above the line stays identical on every viewport. */
     line-height: 0;
     margin: 0;
+    /* the script "I" paints past its advance width; keep it off the "N" */
+    margin-right: 0.06em;
   }
   .hero-line--name {
     margin-bottom: 0.16em;
