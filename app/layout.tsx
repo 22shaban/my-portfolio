@@ -32,6 +32,17 @@ export const metadata: Metadata = {
     "Mumbai",
   ],
   alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { url: "/icons/icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icons/icon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icons/icon-144.png", sizes: "144x144", type: "image/png" },
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     url: "/",
@@ -94,6 +105,20 @@ const personSchema = {
   ],
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  alternateName: ["shabanshaikh.me", "Shaban Shaikh — Cloud & Infrastructure Engineer"],
+  url: SITE_URL,
+  inLanguage: "en",
+  publisher: {
+    "@type": "Person",
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+};
+
 const themeScript = `
 (function(){
   try {
@@ -125,6 +150,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className="grain">
